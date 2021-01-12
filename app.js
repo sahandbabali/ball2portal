@@ -12,18 +12,35 @@ var Engine = Matter.Engine,
   Bodies = Matter.Bodies;
 var ballposx ;
 var ballposy;
-window.addEventListener("deviceorientation", handleOrientation, true);
+var ballsin = 0;
+var txt = " ";
 
- function handleOrientation(event) {
-   var absolute = event.absolute;
-   var alpha = event.alpha;
-   var beta = event.beta;
-   var gamma = event.gamma;
-   var xg = map(beta, -180, 180, -1, 1);
-   var yg = map(gamma, -90, 90, -1, 1);
-     engine.world.gravity.x = yg;
-  engine.world.gravity.y = xg;
- }
+
+// window.addEventListener("deviceorientation", handleOrientation, true);
+
+// function handleOrientation(event) {
+//   var absolute = event.absolute;
+//   var alpha = event.alpha;
+//   var beta = event.beta;
+//   var gamma = event.gamma;
+//   var xg = map(beta, -180, 180, -1, 1);
+//   var yg = map(gamma, -90, 90, -1, 1);
+//   engine.world.gravity.x = yg;
+//   engine.world.gravity.y = xg;
+// }
+
+function verticalText(input) {
+  fill(255);
+  textSize(30);
+  push();
+  translate(370,15);
+  angleMode(DEGREES);
+  rotate(90);
+  text(input, 0,0);
+  pop();
+
+
+}
 
 function Ball(x,y) {
   this.body = Bodies.circle(x, y, 50);
@@ -51,6 +68,9 @@ function Ball(x,y) {
 }
 
 function preload() {
+  // woodbackground = loadImage('/wood.jpg');
+  // ballbg = loadImage('/ball.png');
+
   woodbackground = loadImage('https://i.ibb.co/QQtMPgd/wood.jpg');
   ballbg = loadImage('https://i.ibb.co/2NcrGDL/ball.png');
 }
@@ -80,6 +100,12 @@ function mousePressed() {
 
 function draw() {
   background(woodbackground);
+  if(ballsin == 1){
+    txt = `${ballsin} Ball in the portal`;
+  } else {
+    txt = `${ballsin} Balls in the portal`;
+  }
+  verticalText(txt);
   if (ball) {
     ball.show();
   }
@@ -96,6 +122,7 @@ if(ball){
    
     ball.remove();
     ball = new Ball(random(0,width), random(0,height));
+    ballsin = ballsin+1;
   }
 }
 }
