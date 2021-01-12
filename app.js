@@ -52,7 +52,7 @@ function Ball(x,y) {
 
 function preload() {
   woodbackground = loadImage('https://i.ibb.co/QQtMPgd/wood.jpg');
-  ballbg = loadImage('https://imgbb.com/"><img src="https://i.ibb.co/2NcrGDL/ball.png');
+  ballbg = loadImage('https://i.ibb.co/2NcrGDL/ball.png');
 }
 
 function setup() {
