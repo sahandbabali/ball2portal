@@ -51,8 +51,8 @@ function Ball(x,y) {
 }
 
 function preload() {
-  woodbackground = loadImage('https://github.com/sahandbabali/ball2portal/blob/main/wood.jpg?raw=true');
-  ballbg = loadImage('/https://github.com/sahandbabali/ball2portal/blob/main/ball.png?raw=true');
+  woodbackground = loadImage('https://github.com/sahandbabali/ball2portal/blob/main/wood.jpg');
+  ballbg = loadImage('/https://github.com/sahandbabali/ball2portal/blob/main/ball.png');
 }
 
 function setup() {
