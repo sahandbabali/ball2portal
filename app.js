@@ -16,18 +16,18 @@ var ballsin = 0;
 var txt = " ";
 
 
-// window.addEventListener("deviceorientation", handleOrientation, true);
+window.addEventListener("deviceorientation", handleOrientation, true);
 
-// function handleOrientation(event) {
-//   var absolute = event.absolute;
-//   var alpha = event.alpha;
-//   var beta = event.beta;
-//   var gamma = event.gamma;
-//   var xg = map(beta, -180, 180, -1, 1);
-//   var yg = map(gamma, -90, 90, -1, 1);
-//   engine.world.gravity.x = yg;
-//   engine.world.gravity.y = xg;
-// }
+function handleOrientation(event) {
+  var absolute = event.absolute;
+  var alpha = event.alpha;
+  var beta = event.beta;
+  var gamma = event.gamma;
+  var xg = map(beta, -180, 180, -1, 1);
+  var yg = map(gamma, -90, 90, -1, 1);
+  engine.world.gravity.x = yg;
+  engine.world.gravity.y = xg;
+}
 
 function verticalText(input) {
   fill(255);
